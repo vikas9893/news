@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+about
+{% endblock %}
+{% block childpage %}
+<div class="text-center fs-1 py-3"> About
+    <b class="txt-mycolor">Us <i class="fa fa-info-circle"></i></b></div>
+    <div class="row p-3 p-2">
+        <div class="col-sm-10 mx-auto bg-light fs-4 border border-2 rounded">
+            <img class="text-center" src="{% static 'images/9.png'%}"/> <b class="txt-mycolor"><br/>Tech Vikas</b> is a multifaceted digital media company dedicated to helping consumers, business leaders and policy officials make important decisions in their lives. We use world-class data and technology to publish independent reporting, rankings, journalism and advice that has earned the trust of our readers and users for nearly 5 years. Our platforms on <a href="#">techvikas.tech</a> include Education, Health, Money, Travel, Cars, News and 360 Reviews.<br/><br/>
+            We are proud to be one of the first legacy media brands to transform into a purely digital model nearly a dozen years ago. Our diversified business model engages consumers at every point in their decision-making journey and allows our corporate partners to use brand advertising, performance marketing, e-commerce, brand recognition and thought-leadership programs to achieve their business objectives.
+        </div>
+    </div>
+
+{% endblock %}

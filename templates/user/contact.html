@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+     contactUs
+{% endblock %}
+{% block childpage %}
+
+<style>
+    .form-control{
+    height:40px;
+    margin-bottom:.8%;
+    }
+</style>
+<div class="row mx-5 p-4 " >
+<div class="text-center  fs-2 ">
+     Contact <b class="txt-mycolor">With Us <i class="fa-solid fa-address-book"></i></b>
+</div>
+<p class="text-center ">You may contact us by contact number or fill this form any time you need<br/> professional support or have any question.</p>
+<div class="row px-5 mx-auto border border-2 rounded" style="background:white;">
+    <div class="col-sm-7  p-5">
+        <form method="post">
+            {% csrf_token %}
+        <h5 class="fs-2">Send <span class="txt-mycolor">Your Message</span></h5>
+        <div class="row">
+            <div class="col-sm-6 py-3">
+                Your Name:<br/><input type="text" name="name" class="form-control" required placeholder="Enter your name*" style="width:100%"/>
+            </div>
+            <div class="col-sm-6 py-3">
+                Your Contact:<br/><input type="number" name="mobile" class="form-control" required placeholder="Enter your number *" style="width:100%"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 py-2">
+                Your Email:<br><input type="email" name="email" class="form-control" required placeholder="Enter your email *" style="width:100%"/>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 py-3">
+                    Message:<br/>
+                    <textarea class="form-control" name="msg" required style="width:490px;">
+                </textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <button type="submit" class="btn btn-outline-danger form-control">Send Message</button>
+                </div>
+            </div>
+        </div>
+            </form>
+    </div>
+    <div class="col-sm-5 p-5">
+        <div class="row border border-2 rounded bg-light p-3">
+            <div class="col-md-12 py-2 fs-2">
+                Contact <b class="txt-mycolor">Info</b>
+            </div>
+            <div class="col-sm-12 ">
+                <b class="txt-mycolor"><i class="fa-solid fa-location-dot me-2"></i> Office Address</b><br/>
+                <p class="ms-4">Plot No-1, Behind Sparsh Hospital,<br/> Dandwa ,Sant Kabir Nagar, 272175</p>
+            </div>
+            <div class="col-sm-12">
+                <b class="txt-mycolor"><i class="fa-solid fa-phone me-2"></i> Call Us</b><br/>
+                <a href="tel:+919918323332" style="text-decoration:none;color:black;" class="ms-4">+91 9918323332</a><br/>
+                <a href="tel:+919415879597" style="text-decoration:none;color:black;" class="ms-4">+91 9415879597</a>
+            </div>
+            <div class="col-sm-12 py-2">
+                <b class="txt-mycolor"><i class="fa-solid fa-envelope me-2"></i> Mail Us</b><br/>
+                <a href="mailto:mauryavikas5310@gmail.com" class="ms-4" style="text-decoration:none;color:black;">mauryavikas5310@gmail.com</a>
+                <a href="mailto:up58z9893@gmail.com" class="ms-4" style="text-decoration:none;color:black;">up58z9893@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+<div class="row">
+    <div class="col-sm-12 text-center fs-2">
+    Find us on <b class="txt-mycolor"> Google Map <i class="fa-solid fa-location-dot"></i></b>
+        </div>
+    <p class="text-center">View us on google map easily</p>
+    <div class="col-sm-12 p-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.475124206019!2d82.96994757493033!3d26.792996165226022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399127769c36e72f%3A0xdc997be18aa8af18!2sVikas%20Maurya%20House%20Maurya%20Traders%20Dandwa%20Bhaujaini%20SKN!5e0!3m2!1sen!2sin!4v1694857934153!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+{% endblock %}

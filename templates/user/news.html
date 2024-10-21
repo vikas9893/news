@@ -1,0 +1,80 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+news
+{% endblock %}
+{% block childpage %}
+<div class="text-center fs-1 p-3">Our
+    <b class="txt-mycolor">News <i class="fa-solid fa-radio"></i></b></div>
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        <form method="get">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search news...."/>
+            <i class="input-group-text bg-mycolor text-light">
+                <input type="submit" value="Search" class="btn">
+            </i>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div class="row py-4 city">
+  <div class="col-sm-10 mx-auto">
+    {% for i in cdata %}
+    <a href="/user/news?y={{i.id}}" class="btn btn-outline-danger">{{i.city_name}}
+    <img src="/{{i.city_picture}}" style="height:50px;width:50px;" class="img-thumbnail"/>
+    </a>
+    {% endfor %}
+
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <ul class="list-group">
+  <li class="list-group-item bg-mycolor text-center text-light" aria-current="true">News Category</li>
+{% for x in catdata %}
+      <li class="list-group-item ">
+      <img src="/{{x.category_picture}}" class="img-thumbnail" style="height:50px;width:50px;"/>
+      <a href="/user/news?x={{x.id}}" style="text-decoration:none;color:black;">{{x.category_name}}</a>
+      </li>
+      {% endfor %}
+  <li class="list-group-item">
+      <a href="/user/news/" class="px-5 fs-5" style="text-decoration:none;color:black;font-weight:bold;">View All News </a>
+      </li>
+
+
+</ul>
+  </div>
+  <div class="col-sm-9">
+      {% for x in ndata %}
+      <!-- news card-->
+      <div class="card mb-3 bg-light">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{x.news_picture}}" style="width:100%" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.news_headlines}}</h5>
+        <p class="card-text"><i>{{x.news_category}}</i></p>
+        <p class="card-text"><small class="text-body-secondary">
+             <i class="fa-solid fa-calendar-days"></i>
+          {{x.news_date}} || <i class="fa-solid fa-city"></i> {{x.news_city}}
+
+        </small>
+         <a href="/user/viewnews?msg={{x.id}}" class="btn btn-sm bg-mycolor text-light mt-2">View More
+        <i class="fa-regular fa-eye"></i>
+       </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- end news card-->
+      {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

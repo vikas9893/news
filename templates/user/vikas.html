@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+vikas
+{% endblock %}
+{% block childpage %}
+<h1 class="text-center p-3"><u>Developed <b class="txt-mycolor">By</b></u></h1>
+<div class="row py-4 ">
+    <div class="col-sm-5 p-3 mx-auto bg-light border border-2 rounded " style="font-family:justify;">
+        <img src="{% static 'images/vikasp.jpg '%}" height="200px"><br/><br/>
+        <p>This website developed by <b class="txt-mycolor">Vikas Maurya</b>.</p>
+        <p>I am student of <b class="txt-mycolor">Computer Science and Engineering</b>.</p>
+        <p>I study at <b class="txt-mycolor">MMIT SIDDHARTHANAGAR</b>.</p>
+        <p>The purpose of this website is to provide <b class="txt-mycolor">News</b> to the people.</p>
+        <p>I did summer training from <b class="txt-mycolor">Techpile Technology</b>.</p>
+        <p>This website is made in <b class="txt-mycolor">Python</b> programming language.</p>
+    </div>
+</div>
+{% endblock %}
